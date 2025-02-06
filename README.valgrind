@@ -11,7 +11,7 @@ Massif 是一个内存分析工具，它帮助分析堆内存的使用情况和�
 特别有助于分析内存使用的效率，以及优化内存消耗。
 
 ```
-$> valgrind --tool=massif --massif-out-file=massif.out --depth=1 ./your_program
+$> valgrind --tool=massif --massif-out-file=massif.out --depth=1 ./heap_alloc
 $> ms_print massif.out
 ```
 
