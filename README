@@ -1,0 +1,5 @@
+# Heap Allocation Analysis Lab
+
+This lab to analyze the heap memory usage of the `heap_alloc` program and 
+evaluate the performance of different memory allocators, 
+namely ptmalloc2, jemalloc, and tcmalloc.

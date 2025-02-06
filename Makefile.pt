@@ -1,0 +1,25 @@
+CC = gcc
+CFLAGS = -g -Wall -I. -fPIC
+LDFLAGS = -shared
+LDFLAGS += -L/usr/lib/x86_64-linux-gnu
+ 
+# The default choice is the ptmalloc implementation provided by glibc, 
+# but you can choose Facebook's jemalloc or Google's tcmalloc.
+LIBMALLOC = -lc
+
+SRCS = bench-malloc.c json.c
+OBJS = $(SRCS:.c=.o)
+TARGET = bench-ptmalloc
+
+all: $(TARGET)
+
+$(TARGET): $(OBJS)
+	@$(CC) $^ -o $@ $(LIBMALLOC) 
+
+%.o: %.c json.h
+	@$(CC) $(CFLAGS) $(LDFLAGS) -c $< -o $@
+
+clean:
+	@rm -f $(OBJS) $(TARGET)
+
+.PHONY: all clean

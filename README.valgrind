@@ -1,0 +1,19 @@
+Valgrind
+========
+Valgrind 是一个强大的程序调试和性能分析工具，广泛用于检测 C/C++ 程序中的内存问题。
+它提供了一套工具来帮助开发者查找和修复内存泄漏、未初始化内存访问、内存越界等问题，
+同时也可以进行程序性能分析。
+
+
+Massif
+======
+Massif 是一个内存分析工具，它帮助分析堆内存的使用情况和内存分配的高峰。
+特别有助于分析内存使用的效率，以及优化内存消耗。
+
+```
+$> valgrind --tool=massif --massif-out-file=massif.out --depth=1 ./your_program
+$> ms_print massif.out
+```
+
+
+
