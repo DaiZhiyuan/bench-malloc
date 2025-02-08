@@ -131,3 +131,7 @@ Number of snapshots: 90
  }
 }
 ```
+
+### Bar chart
+
+![](./benchmark.png)
